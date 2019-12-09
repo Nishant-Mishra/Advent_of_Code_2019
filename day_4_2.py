@@ -19,7 +19,7 @@ def count_valid_combi(l, f):
         # Check condition 1
         tmp1 = conv(num=num)
         tmp2 = list(tmp1["d"])
-        tmp2.sort()
+        tmp2 = "".join(sorted(tmp2))
 
         if tmp1["d"] == tmp2:
             cond1 = True
@@ -51,33 +51,11 @@ def count_valid_combi(l, f):
 
     return count
 
-def conv(num=None, list_dig=None):
+def conv(num=None):
 
     global n_digs
 
-    if not list_dig and num:
-        data = {"n": num}
-
-        l = []
-        for i in range(0, n_digs):
-            l.insert(i, int(num%10))
-            i += 1
-            num = int(num/10)
-
-        l.reverse()
-        data["d"] = l
-
-    elif not num and list_dig:
-        data = {"d": list_dig}
-
-        n = 0
-        for d in list_dig:
-            n = n * 10 + d
-
-        data["n"] = n
-
-    else:
-        data = {"n": 0, "d": [0]}
+    data = {"n": num, "d": str(num)}
 
     return data
 
