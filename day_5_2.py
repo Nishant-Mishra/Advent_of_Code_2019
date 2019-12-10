@@ -182,7 +182,7 @@ def puzzle(filename):
 
 def main():
 
-        puzzle("input_day_5_1.txt")
+        puzzle("input_day_5_2.txt")
 
 
 if __name__ == "__main__":
